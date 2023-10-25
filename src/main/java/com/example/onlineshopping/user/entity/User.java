@@ -19,6 +19,7 @@ import java.util.UUID;
 @Table(name = "`user`")
 public class User implements UserDetails {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
     private String surname;
