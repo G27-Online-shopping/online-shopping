@@ -155,3 +155,26 @@ section{
         transition: .4s;
     }
 }
+.search{
+    width: 400px;
+    background-color: white;
+    height: 45px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+.search input{
+    width: 300px;
+    border: none;
+    outline: none;
+    height: 40px;
+}
+.search i{
+    margin-left: 30px ;
+    color: #2c2c2c;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
