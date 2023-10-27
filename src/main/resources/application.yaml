@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:postgresql://localhost:5432/shopping
+    username: postgres
+    password: 3651551
   jpa:
     hibernate:
       ddl-auto: update
