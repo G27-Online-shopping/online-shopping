@@ -1,20 +1,13 @@
-package com.example.onlineshopping.card.entity;
+package com.example.onlineshopping.card.dto;
 
-import com.example.onlineshopping.user.entity.User;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Card {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+@Data
+public class CarCreateDto {
     private String cardName;
     private String cardFirstName;
     private String cardLastName;
@@ -22,7 +15,4 @@ public class Card {
     private Integer cardCvv;
     private String cardExpirationDate;
     private String phoneNumber;
-    @ManyToOne
-    @JoinTable(name = "user_id")
-    private User user;
 }

@@ -1,5 +1,6 @@
 package com.example.onlineshopping.user.entity;
 
+import com.example.onlineshopping.card.entity.Card;
 import com.example.onlineshopping.user.role.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,6 +37,9 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "user")
+    private List<Card> cards;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
