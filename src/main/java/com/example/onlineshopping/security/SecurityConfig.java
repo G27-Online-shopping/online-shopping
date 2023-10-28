@@ -28,7 +28,6 @@ public class SecurityConfig {
                                 .loginProcessingUrl("/sign-in")
                                 .usernameParameter("email")
                                 .passwordParameter("password")
-
                 )
                 .logout(
                         logoutConfig -> logoutConfig
