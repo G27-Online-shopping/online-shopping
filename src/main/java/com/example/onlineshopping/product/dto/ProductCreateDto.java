@@ -11,9 +11,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 public class ProductCreateDto {
-
+    private String photo;
     private String name;
     private Integer price;
+    private String description;
     private LocalDateTime dateOfManufacture;
     private LocalDateTime expirationDate;
 }

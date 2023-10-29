@@ -14,13 +14,12 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "product_id" , nullable = false)
     private UUID id;
 
-    @Column(name = "product_name" , nullable = false)
+    @Column(name = "product_name" , nullable = false,unique = true)
     private String name;
 
     @Column(name = "product_price" , nullable = false)
@@ -31,5 +30,9 @@ public class Product {
 
     @Column(name = "product_expiration_date" , nullable = false)
     private LocalDateTime expirationDate;
+
+    private String photo;
+
+    private String description;
 
 }

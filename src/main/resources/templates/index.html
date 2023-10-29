@@ -48,8 +48,17 @@
         <h2>Our Trending <span>Products</span></h2>
     </div>
     <div class="products">
-        <div class="row">
-            <img class="product-image" src="https://www.tyrereviews.com/public/tyres/Kumho-Ecsta-V730.webp">
+        <div class="row" th:each="product: ${products}">
+
+
+            <form th:action="@{/product}" th:method="post" >
+                <input hidden="hidden" name="name" th:value="${product.name}">
+                <button type="submit" style="border: none">
+                    <img th:src="${product.photo}" class="product-image" alt="">
+                </button>
+            </form>
+
+
             <div class="product-text">
                 <h5>Sale</h5>
             </div>
@@ -64,75 +73,12 @@
                 <i class='bx bxs-star-half' ></i>
             </div>
             <div class="price">
-                <h4>Kumho Slous 205/65/15</h4>
-                <p>250$</p>
+                <h4 th:text="${product.name}"></h4>
+                <p th:text="${product.price+'$'}"></p>
+                <button sec:authorize="isAuthenticated()" class="button-34">To Card</button>
             </div>
         </div>
-
-        <div class="row">
-            <img class="product-image" src="https://www.tyrereviews.com/public/tyres/Kumho-Ecsta-V730.webp">
-            <div class="product-text">
-                <h5>Sale</h5>
-            </div>
-            <div class="heart-icon">
-                <i class='bx bx-heart'></i>
-            </div>
-            <div class="ratting">
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star-half' ></i>
-            </div>
-            <div class="price">
-                <h4>Kumho Slous 205/65/15</h4>
-                <p>250$</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <img class="product-image" src="https://www.tyrereviews.com/public/tyres/Kumho-Ecsta-V730.webp">
-            <div class="product-text">
-                <h5>Sale</h5>
-            </div>
-            <div class="heart-icon">
-                <i class='bx bx-heart'></i>
-            </div>
-            <div class="ratting">
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star-half' ></i>
-            </div>
-            <div class="price">
-                <h4>Kumho Slous 205/65/15</h4>
-                <p>250$</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <img class="product-image" src="https://www.tyrereviews.com/public/tyres/Kumho-Ecsta-V730.webp">
-            <div class="product-text">
-                <h5>Sale</h5>
-            </div>
-            <div class="heart-icon">
-                <i class='bx bx-heart'></i>
-            </div>
-            <div class="ratting">
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star' ></i>
-                <i class='bx bxs-star-half' ></i>
-            </div>
-            <div class="price">
-                <h4>Kumho Slous 205/65/15</h4>
-                <p>250$</p>
-            </div>
-
-
-        </div>
+        
     </div>
 
 </section>

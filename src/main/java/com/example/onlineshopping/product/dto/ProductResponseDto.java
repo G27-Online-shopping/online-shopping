@@ -15,6 +15,8 @@ public class ProductResponseDto {
     private UUID id;
     private String name;
     private Integer price;
+    private String photo;
+    private String description;
     private LocalDateTime dateOfManufacture;
     private LocalDateTime expirationDate;
 
