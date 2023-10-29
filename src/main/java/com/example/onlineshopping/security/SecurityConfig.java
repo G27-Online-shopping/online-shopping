@@ -12,7 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    private final String[] openEndpoints = {"/", "/sign-in", "/sign-up", "/css/**"};
+    private final String[] openEndpoints = {"/", "/sign-in", "/sign-up", "/css/**","/card"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {

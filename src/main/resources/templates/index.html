@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,7 +18,7 @@
           href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-<header >
+<header>
     <a href="/" class="icon"><img src="https://img.freepik.com/premium-vector/shopping-logo-design-template-with-bag_502185-127.jpg?w=996" alt="" height="90" width="220"></a>
     <ul class="navmenu">
         <li><a href="/">Home</a> </li>
@@ -31,7 +32,7 @@
         </label>
     </div>
     <div class="nav-icon">
-        <a href="/"><i class='bx bx-user'></i></a>
+        <a href="/sign-in"><i class='bx bx-user'></i></a>
         <a href="/card"><i class='bx bx-cart' ></i></a>
         <div class="bx bx-menu" id="menu-icon"></div>
     </div>

@@ -2,18 +2,15 @@ package com.example.onlineshopping.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @Controller
-@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
-    @PostMapping
-    public String crateUser(@PathVariable UserCrateDto userCrateDto){
-        userService.crateUser(userCrateDto);
-        return "redirect:/";
+    @GetMapping("sign-in")
+    public String signIn(){
+        return "user/sign-in";
     }
 }
