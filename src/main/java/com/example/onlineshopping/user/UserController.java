@@ -11,6 +11,9 @@ public class UserController {
     private final UserService userService;
     @GetMapping("sign-in")
     public String signIn(){
+        System.out.println("userService");
         return "user/sign-in";
+
     }
+
 }
