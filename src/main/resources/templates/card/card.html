@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title>Card</title>
+    <link th:href="@{css/card.css}" rel="stylesheet">
 </head>
 <body>
-<h1>Hello Card</h1>
+<div class="option-label-not-option-label">
+    <!---->
+    <p>Qo'llab quvvatlanadigan kartalar</p>
+    <div class="pay-card-list">
+        <div>
+            <ul>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_visa.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_master.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_troy.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_amex.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_discover.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_jcb.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_diners.png" alt="img">
+                </li>
+                <li>
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_unionpay.png" alt="img">
+                </li>
+                ::after
+
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
