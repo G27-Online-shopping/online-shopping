@@ -15,7 +15,6 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String cardName;
     private String cardFirstName;
     private String cardLastName;
     private String cardNumber;
@@ -23,6 +22,6 @@ public class Card {
     private String cardExpirationDate;
     private String phoneNumber;
     @ManyToOne
-    @JoinTable(name = "user_id")
+    @JoinTable(name = "user_card")
     private User user;
 }

@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.main{
+    display: flex;
+    width: 100%;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.cards{
+    justify-content: space-between;
+    display: flex;
+}
+.pay-card-list {
+    display: flex;
+    gap: 15px;
+
+}
+.pay-card-list img{
+    width: 30px;
+    height: 20px;
+}
+.right{
+    display: flex;
+    width: 50%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form input,label,button{
+    width: fit-content;
+    font-size: 14px;
+    padding:10px
+}
+.names, .card_date{
+    display: flex;
+    gap: 15px;
+}
+.first_name, .last_name, .cvv, .expiration_date{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

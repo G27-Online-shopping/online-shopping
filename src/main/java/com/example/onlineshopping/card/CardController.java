@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 
 @Controller
-@RequestMapping("/card")
+//@RequestMapping("/card")
 @RequiredArgsConstructor
 public class CardController {
     private final CardService cardService;
@@ -23,7 +23,7 @@ public class CardController {
     @PostMapping("/card")
     public String createCar(@ModelAttribute CarCreateDto carCreateDto, Principal principal){
         cardService.createCard(carCreateDto, principal);
-        return  "redirect:/";
+        return  "redirect:/card";
 
     }
 }

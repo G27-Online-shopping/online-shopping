@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Card</title>
+    <link href="/css/cards/card.css" rel="stylesheet">
 </head>
 <body>
-<h1>Hello Card</h1>
+<h1>Karta ma'lumotlari</h1>
+<div class="main">
+    <div class="left" >
+        <div class="cards">
+            <p>Qo'llab quvvatlanadigan kartalar</p>
+            <div class="pay-card-list">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_visa.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_master.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_troy.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_amex.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_discover.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_jcb.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_diners.png" alt="img">
+                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_unionpay.png" alt="img">
+
+            </div>
+        </div>
+        <form class="card-list" th:method="POST" th:action="@{/card}">
+            <input hidden="hidden" name="_csrf" th:value="${_csrf}">
+            <label>
+                Card Number
+            </label>
+            <input name="cardNumber" placeholder="Card Number">
+            <div class="card_date">
+                <div class="expiration_date">
+                    <label>
+                        CardExpirationDate
+                    </label>
+                    <input name="cardExpirationDate" placeholder="CardExpirationDate">
+                </div>
+                <div class="cvv">
+                    <label>
+                        Card Cvv
+                    </label>
+                    <input name="cardCvv" placeholder="Card Cvv">
+                </div>
+            </div>
+            <div class="names">
+                <div class="first_name">
+                    <label>
+                        First Name
+                    </label>
+                    <input name="cardFirstName" placeholder="First name">
+                </div>
+                <div class="last_name">
+                    <label>
+                        Last Name
+                    </label>
+                    <input name="cardLastName" placeholder="Last name">
+                </div>
+            </div>
+
+            <label>
+                Phone Number
+            </label>
+            <input name="phoneNumber" placeholder="Phone Number">
+            <button id="btn_submit" type="submit">To'lov</button>
+            <script type="text/javascript" src="/css/cards/card.js"></script>
+        </form>
+    </div>
+    <div class="right">
+        <h1>fkjwbvkenxbfrwkdxmvkjwehb</h1>
+    </div>
+</div>
+
 </body>
 </html>
