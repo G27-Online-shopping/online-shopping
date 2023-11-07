@@ -1,7 +1,7 @@
 package com.example.onlineshopping.user.entity;
 
 import com.example.onlineshopping.card.entity.Card;
-import com.example.onlineshopping.user.role.Role;
+import com.example.onlineshopping.user.role.entity.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

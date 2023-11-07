@@ -1,38 +1,6 @@
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*}*/
-/*.sign-in-form{*/
-/*    height: 70%;*/
-/*    width: 40%;*/
-/*    color: white;*/
-/*    background-color: #161616;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    border-radius: 20px;*/
-/*}*/
-/*body{*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-/*.sign-in-form h1{*/
-/*    margin: 10px 0 20px 0;*/
-/*}*/
-/*.sign-in-form input{*/
-/*    margin-bottom: 5px;*/
-/*}*/
-/*.sign-in-form button{*/
-/*    margin-top: 20px;*/
-/*}*/
-
+/* Общие стили для body */
 body {
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -41,9 +9,9 @@ body {
     margin: 0;
 }
 
-/* Style the sign-in form container */
+/* Стили для контейнера формы входа */
 .sign-in-form {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -51,20 +19,20 @@ body {
     text-align: center;
 }
 
-/* Style the form title */
+/* Стили для заголовка формы */
 .sign-in-form h1 {
     margin-bottom: 20px;
-    color: #007BFF; /* Blue color for the title */
+    color: #007BFF;
 }
 
-/* Style form labels */
+/* Стили для меток формы */
 .sign-in-form label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
-/* Style form inputs */
+/* Стили для полей ввода формы */
 .sign-in-form input {
     width: 100%;
     padding: 10px;
@@ -73,9 +41,9 @@ body {
     border-radius: 5px;
 }
 
-/* Style the submit button */
+/* Стили для кнопки отправки формы */
 .sign-in-form button {
-    background-color: #007BFF; /* Blue button background */
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -85,7 +53,7 @@ body {
     transition: background-color 0.3s;
 }
 
-/* Change button color on hover */
+/* Изменение цвета кнопки при наведении */
 .sign-in-form button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
