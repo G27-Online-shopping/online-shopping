@@ -200,3 +200,7 @@ section{
     word-break: break-word;
     border: 0;
 }
+.h5-profile{
+    display: flex;
+    margin-right: 3px;
+}
