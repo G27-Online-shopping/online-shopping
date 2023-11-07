@@ -29,7 +29,7 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String phoneNumber;
     private String password;
-
+    private String photo;
     @ManyToMany
     @JoinTable(
             name = "user_role",

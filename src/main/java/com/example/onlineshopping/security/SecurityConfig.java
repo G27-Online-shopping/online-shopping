@@ -25,8 +25,8 @@ public class SecurityConfig {
                         loginConfig -> loginConfig
                                 .loginPage("/sign-in")
                                 .defaultSuccessUrl("/")
-//                                .failureUrl("/sign-in?error=true")
-                                .loginProcessingUrl("/")
+                                .failureUrl("/sign-in?error=true")
+                                .loginProcessingUrl("/sign-in")
                                 .usernameParameter("email")
                                 .passwordParameter("password")
                 )
