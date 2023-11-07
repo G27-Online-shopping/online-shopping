@@ -1,6 +1,7 @@
 package com.example.onlineshopping.product;
 
 
+import com.example.onlineshopping.product.dto.ProductCreateDto;
 import com.example.onlineshopping.product.dto.ProductResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,7 +25,16 @@ public class ProductController {
         System.out.println(all.get(1));
         return "index";
     }
-/*
+
+//    @GetMapping("/")
+//    public String getProduct( Model model){
+//        List<ProductResponseDto> responseDtoList=productService.getAll();
+//        model.addAttribute("products" , responseDtoList);
+//        System.out.println(responseDtoList.get(1));
+//        return "search";
+//    }
+
+
     @PostMapping
     public ProductResponseDto create(@RequestBody ProductCreateDto productCreateDto){
         return productService.create(productCreateDto);
@@ -34,7 +45,7 @@ public class ProductController {
         return productService.get(id);
     }
 
-    @GetMapping
+    @GetMapping("/products")
     public List<ProductResponseDto> getAll(){
         return productService.getAll();
     }
@@ -47,5 +58,5 @@ public class ProductController {
     @DeleteMapping("/{productId}")
     public void delete(@PathVariable("productId") UUID id){
         productService.delete(id);
-    }*/
+    }
 }

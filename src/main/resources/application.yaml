@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/shopping
     username: postgres
-    password: 1234
+    password: 3651551
   jpa:
     hibernate:
       ddl-auto: update
@@ -10,7 +10,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
 
   sms:
     eskiz:
