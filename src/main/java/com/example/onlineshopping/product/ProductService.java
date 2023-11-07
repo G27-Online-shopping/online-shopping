@@ -18,8 +18,6 @@ import java.util.UUID;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final ModelMapper modelMapper = new ModelMapper();
-
 
     @PostConstruct
     public void init() {
@@ -29,27 +27,9 @@ public class ProductService {
         productRepository.save(product1);
         Product product2 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
        productRepository.save(product2);
-       Product product3 = new Product(UUID.randomUUID(), "SAMSUNG 24", 20, LocalDateTime.now(), LocalDateTime.now(),"https://russian.alibaba.com/p-detail/Wholesale-1600227954830.html?spm=a27aq.27059075.6360844600.1.232f5a927D61He"," Всего вариантов: 1 Размер экрана;1 Разрешение;1 Модели.\n" +
-               "Выбрать сейчас\n" +
-               "Размер экрана\n" +
-               "\"24\"\"\"\n" +
-               "Разрешение\n" +
-               "1920x1080\n" +
-               "Модели\n" +
-               "SM C24F396FHC ");
-       productRepository.save(product3);
-
-//       Product product4 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
-//       productRepository.save(product4);
-//       Product product5 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
-//       productRepository.save(product5);
-//       Product product6 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
-//       productRepository.save(product6);
-//       Product product7 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
-//       productRepository.save(product7);
-
     }
 
+    private final ModelMapper modelMapper = new ModelMapper();
 
     @Transactional
     public ProductResponseDto create(ProductCreateDto productCreateDto) {
