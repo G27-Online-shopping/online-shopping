@@ -8,6 +8,8 @@
     text-decoration: none;
 }
 .profile-div{
+    float: left;
+    width: 30%;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -43,4 +45,26 @@
         text-decoration: none;
         margin: 4px 2px;
         cursor: pointer;
+}
+
+.delete-div{
+    float: left;
+    width: 50%;
+    padding: 80px;
+}
+button.delete{
+    position: relative;
+    float: left;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid;
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
 }

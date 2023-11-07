@@ -2,12 +2,10 @@ package com.example.onlineshopping.user;
 
 import com.example.onlineshopping.user.dto.UserCrateDto;
 import com.example.onlineshopping.user.dto.UserUpdateDto;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -36,6 +34,11 @@ public class UserController {
     @PostMapping("update")
     public String update(@ModelAttribute UserUpdateDto userUpdateDto){
         userService.update(userUpdateDto);
+        return "redirect:/sign-out";
+    }
+    @PostMapping("delete")
+    public String delete(@RequestParam String email){
+        userService.delete(email);
         return "redirect:/sign-out";
     }
 }

@@ -38,6 +38,7 @@
         <ul class="navmenu">
             <li><a href="/sign-out"><h5>Log Out</h5> </a></li>
         </ul>
+
     </div>
 
 </header>
@@ -52,6 +53,12 @@
         <h4 th:text="'Surname: ' + ${#authentication.principal.surname}"></h4>
         <h4 th:text="'Email: ' + ${#authentication.principal.email}"></h4>
         <h4 th:text="'PhoneNumber: ' + ${#authentication.principal.phoneNumber}"></h4>
+    </div>
+    <div class="delete-div">
+        <form th:method="POST" th:action="@{/delete}">
+             <input hidden="hidden" type="text" name="email" th:value="${#authentication.principal.email}">
+             <button class="delete" type="submit">Delete Account</button>
+        </form>
     </div>
     <div class="update">
         <form th:method="POST" th:action="@{/update}">
