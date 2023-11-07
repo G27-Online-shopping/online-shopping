@@ -3,6 +3,7 @@ package com.example.onlineshopping.user;
 import com.example.onlineshopping.user.dto.UserCrateDto;
 import com.example.onlineshopping.user.dto.UserUpdateDto;
 import com.example.onlineshopping.user.entity.User;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,11 +27,11 @@ public class UserService implements UserDetailsService {
         return userRepository.findUserByEmail(username).get();
     }
 
+    @Transactional
     public void create(UserCrateDto userCreateDto) {
         User user = mapper.map(userCreateDto, User.class);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-
     }
 
     public void update(UserUpdateDto userUpdateDto) {
@@ -43,5 +44,9 @@ public class UserService implements UserDetailsService {
         userByEmail.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.delete(userByEmail);
         userRepository.save(userByEmail);
+    }
+    @Transactional
+    public void delete(String email) {
+        Optional<User> user = userRepository.deleteUserByEmail(email);
     }
 }

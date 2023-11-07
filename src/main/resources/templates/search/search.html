@@ -49,7 +49,7 @@
     <div class="row" th:each="product: ${products}">
 
 
-      <form th:action="@{/product}" th:method="post">
+      <form th:action="@{/templates/product}" th:method="post">
         <input hidden="hidden" name="name" th:value="${product.name}">
         <button type="submit" style="border: none">
           <img th:src="${product.photo}" class="product-image" alt="">
@@ -104,7 +104,7 @@
   </div>
 </section>
 
-<script src="java.js"></script>
+<script src="../java.js"></script>
 
 
 </body>
