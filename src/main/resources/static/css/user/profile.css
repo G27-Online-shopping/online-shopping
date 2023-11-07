@@ -20,6 +20,27 @@
     font-weight: 400;
     transition: all .42s ease;
 }
-.update{
+.update div{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.update input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: compact;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+.update button{
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
 }

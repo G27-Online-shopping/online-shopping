@@ -1,11 +1,13 @@
 package com.example.onlineshopping.user;
 
 import com.example.onlineshopping.user.dto.UserCrateDto;
+import com.example.onlineshopping.user.dto.UserUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Controller
@@ -30,5 +32,10 @@ public class UserController {
     public String signUp(@ModelAttribute UserCrateDto userCreatedDto){
         userService.create(userCreatedDto);
         return "redirect:user/sign-in";
+    }
+    @PostMapping("update")
+    public String update(@ModelAttribute UserUpdateDto userUpdateDto){
+        userService.update(userUpdateDto);
+        return "redirect:/sign-out";
     }
 }
