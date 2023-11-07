@@ -24,11 +24,17 @@ public class SecurityConfig {
                 ).formLogin(
                         loginConfig -> loginConfig
                                 .loginPage("/sign-in")
-                                .defaultSuccessUrl("/" , true)
+                                .defaultSuccessUrl("/", true)
                                 .loginProcessingUrl("/sign-in")
                                 .usernameParameter("email")
                                 .passwordParameter("password")
                 )
+                .oauth2Login(oauth2LoginConfig -> {
+                    oauth2LoginConfig
+                            .loginPage("/oauth2/authorization")
+                            .defaultSuccessUrl("/")
+                            .failureUrl("/sign-in?error=true");
+                })
                 .logout(
                         logoutConfig -> logoutConfig
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/sign-out"))

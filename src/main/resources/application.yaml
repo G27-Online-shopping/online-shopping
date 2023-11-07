@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: Sayyod
+    password: diyor5712001
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,8 +11,23 @@ spring:
       hibernate:
         format_sql: true
 
-  sms:
-    eskiz:
-      email: diyorbek2110@gmail.com
-      password: bd4TYwGbetC10xklJN7J9OiYBPAXpRDD1uHiWtg2
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 272190823860-no96cvk0kgnoflnaosmvqg6ehmd245ni.apps.googleusercontent.com
+            client-secret: secret=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
+          github:
+            client-id: e7be3a8e516dd4f6bb47
+            client-secret: cc8900decde4660fbe5c6504557708d987d2d70e
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://accounts.google.com/o/oauth2/token
+            jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+          github:
+            user-info-uri: https://api.github.com/user
+
 

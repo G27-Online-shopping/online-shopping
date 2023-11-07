@@ -1,59 +1,64 @@
-/* Общие стили для body */
-body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+/* CSS code for modern sign-in form */
 
-/* Стили для контейнера формы входа */
 .sign-in-form {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
     padding: 20px;
-    width: 400px;
-    text-align: center;
-}
-
-/* Стили для заголовка формы */
-.sign-in-form h1 {
-    margin-bottom: 20px;
-    color: #007BFF;
-}
-
-/* Стили для меток формы */
-.sign-in-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-/* Стили для полей ввода формы */
-.sign-in-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    background-color: #f2f2f2;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для кнопки отправки формы */
-.sign-in-form button {
-    background-color: #007BFF;
+.sign-in-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.sign-in-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
+.sign-in-form input[type="email"],
+.sign-in-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sign-in-form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.sign-in-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-/* Изменение цвета кнопки при наведении */
-.sign-in-form button:hover {
-    background-color: #0056b3;
+.sign-in-form a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sign-in-form a:hover {
+    color: #333;
+    text-decoration: underline;
 }

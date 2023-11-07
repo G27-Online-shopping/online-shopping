@@ -1,11 +1,15 @@
 package com.example.onlineshopping.user;
 
 import com.example.onlineshopping.user.dto.UserCrateDto;
+import com.example.onlineshopping.user.entity.User;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 
 @Controller
@@ -26,4 +30,6 @@ public class UserController {
         userService.create(userCreatedDto);
         return "redirect:user/sign-in";
     }
+
+
 }
