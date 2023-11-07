@@ -17,10 +17,10 @@ public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public void crateUser(UserCrateDto userCrateDto) {
-        User user = mapper.map(userCrateDto, User.class);
-        userRepository.save(user);
-    }
+//    public void crateUser(UserCrateDto userCrateDto) {
+//        User user = mapper.map(userCrateDto, User.class);
+//        userRepository.save(user);
+//    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -30,7 +30,6 @@ public class UserService implements UserDetailsService {
     public void create(UserCrateDto userCreateDto) {
         User user = mapper.map(userCreateDto, User.class);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-
         userRepository.save(user);
 
     }
