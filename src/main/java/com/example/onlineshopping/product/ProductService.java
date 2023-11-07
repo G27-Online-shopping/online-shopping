@@ -36,6 +36,13 @@ public class ProductService {
                "SM S27R356FH ");
        productRepository.save(product3);
 
+        Product product4 = new Product(UUID.randomUUID(), "Samsung Galaxy A34", 12, LocalDateTime.now(), LocalDateTime.now(),"https://openshop.uz/public/storage/uploads/products/thumbnail/202311/obSQNVcfOGmP5NZQhWZcd9mPcSKtKd50Jgx7eIS0.jpg","Samsung Galaxy A34 5G 6/128 GB Graphite + В подарок чехол");
+        productRepository.save(product4);
+        Product product5 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://images.uzum.uz/cjhkt74jvf2hn7fe1b50/original.jpg","Термобелье детское, разные цвета ");
+        productRepository.save(product5);
+        Product product6 = new Product(UUID.randomUUID(), "Пылесос ", 12, LocalDateTime.now(), LocalDateTime.now(),"https://images.uzum.uz/cjcbslbk9fq5pecv9b40/original.jpg","Пылесос Polaris PVC 2003Ri ");
+        productRepository.save(product6);
+
     }
 
     private final ModelMapper modelMapper = new ModelMapper();
