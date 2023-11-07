@@ -37,7 +37,6 @@
     </div>
     <div class="nav-icon">
         <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
-        <a sec:authorize="isAuthenticated()" href="/sign-up" th:text="${#authentication.principal.surname} + ' ' + ${#authentication.principal.name}">Username</a>
         <a href="card/card"><i class='bx bx-cart'></i></a>
     </div>
 

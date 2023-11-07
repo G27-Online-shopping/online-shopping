@@ -19,7 +19,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    @PostConstruct
+    /*@PostConstruct
     public void init() {
         Product product = new Product(UUID.randomUUID(), "iPhone 15 pro max", 12, LocalDateTime.now(), LocalDateTime.now(),"https://imagineonline.store/cdn/shop/files/iPhone_15_Pro_Max_Blue_Titanium_PDP_Image_Position-1__en-IN_1445x.jpg?v=1694758834","Iphone 15 pro max black 256 Gb");
         productRepository.save(product);
@@ -27,16 +27,7 @@ public class ProductService {
         productRepository.save(product1);
         Product product2 = new Product(UUID.randomUUID(), "T-Shirt", 12, LocalDateTime.now(), LocalDateTime.now(),"https://pbx2-pbww-prod-pbww-cdn.getprintbox.com/media/productimage/fe050866-8169-4645-ad76-10437425291c/Blank%20T-Shirt_thumb_900x900?mt=1588770269.372995","Xlopok 100% ");
        productRepository.save(product2);
-       Product product3 = new Product(UUID.randomUUID(), "SAMSUNG", 20, LocalDateTime.now(), LocalDateTime.now(),"https://media2.bulavka.uz/qGJwg2BCCwXqFoFJefgfN2w9C6c=/fit-in/485x570/products/Kzh9nvyN3m/input.jpeg","Варианты\n" +
-               "Размер экрана: \"27\"\"\"\n" +
-               "\"27\"\"\"\n" +
-               "Разрешение: 1920x1080\n" +
-               "1920x1080\n" +
-               "Модели\n" +
-               "SM S27R356FH ");
-       productRepository.save(product3);
-
-    }
+    }*/
 
     private final ModelMapper modelMapper = new ModelMapper();
 

@@ -1,5 +1,6 @@
 package com.example.onlineshopping.product.entity;
 
+import com.example.onlineshopping.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,8 +32,13 @@ public class Product {
     @Column(name = "product_expiration_date" , nullable = false)
     private LocalDateTime expirationDate;
 
+    @Column(nullable = false)
     private String photo;
 
+
     private String description;
+
+//    @ManyToOne(targetEntity = User.class)
+//    public User user;
 
 }
