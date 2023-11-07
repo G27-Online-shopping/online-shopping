@@ -19,7 +19,7 @@ public class Product {
     @Column(name = "product_id" , nullable = false)
     private UUID id;
 
-    @Column(name = "product_name" , nullable = false,unique = true)
+    @Column(name = "product_name" , nullable = false)
     private String name;
 
     @Column(name = "product_price" , nullable = false)
