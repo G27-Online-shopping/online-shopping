@@ -26,4 +26,5 @@ public class UserController {
         userService.create(userCreatedDto);
         return "redirect:user/sign-in";
     }
+
 }

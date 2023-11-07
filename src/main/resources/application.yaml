@@ -11,3 +11,8 @@ spring:
       hibernate:
         format_sql: true
 
+  sms:
+    eskiz:
+      email: diyorbek2110@gmail.com
+      password: bd4TYwGbetC10xklJN7J9OiYBPAXpRDD1uHiWtg2
+
