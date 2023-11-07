@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/user/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,14 +28,6 @@
         <li><a href="/">Home</a></li>
         <li><a href="/">Products</a></li>
     </ul>
-    <div class="search">
-        <form method="get" action="product/search">
-            <label>
-                <input type="search" placeholder="Search...">
-                <a href="/search"><i class='bx bx-search'></i></a>
-            </label>
-        </form>
-    </div>
     <div class="nav-icon">
         <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
         <h6 class="h5-profile" sec:authorize="isAuthenticated()" th:text="${#authentication.principal.name}"></h6>
@@ -43,6 +35,9 @@
             th:text="${#authentication.principal.surname}"></h6>
         <a sec:authorize="isAuthenticated()" href="/profile"><i class='bx bx-user'></i></a>
         <a href="/card"><i class='bx bx-cart'></i></a>
+        <ul class="navmenu">
+            <li><a href="/sign-out"><h5>Log Out</h5> </a></li>
+        </ul>
     </div>
 
 </header>
@@ -79,6 +74,7 @@
             <button type="submit">Update</button>
         </form>
     </div>
+
 </section>
 
 
