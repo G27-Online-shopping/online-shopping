@@ -113,15 +113,19 @@
             </form>
         </div>
         <div class="right">
+            <section class="trending-product" id="trending">
+                <div class="center-text">
+                    <h2>Our Trending <span>Products</span></h2>
+                </div>
             <div class="products">
-                <div class="row" th:each="product: ${productId}">
+                <div class="row" th:each="product: ${products}">
 
-                    <form th:action="@{/product}" th:method="post">
+
                         <input hidden="hidden" name="name" th:value="${product.name}">
                         <button type="submit" style="border: none">
                             <img th:src="${product.photo}" class="product-image" alt="">
                         </button>
-                    </form>
+
 
 
                     <div class="product-text">
@@ -145,7 +149,9 @@
                 </div>
 
             </div>
+            </section>
         </div>
+
     </div>
 
 
