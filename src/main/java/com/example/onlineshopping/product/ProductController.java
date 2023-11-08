@@ -26,7 +26,6 @@ public class ProductController {
         return "index";
     }
 
-
 //    @GetMapping("/")
 //    public String getProduct( Model model){
 //        List<ProductResponseDto> responseDtoList=productService.getAll();

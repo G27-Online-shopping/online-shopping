@@ -12,7 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-    private final String[] openEndpoints = {"/", "/sign-in", "/sign-up", "/css/**","/card"};
+    private final String[] openEndpoints = {"/", "/sign-in", "/sign-up", "/css/**","/card","/product/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth2LoginConfig -> {
                     oauth2LoginConfig
                             .loginPage("/oauth2/authorization")
-                            .defaultSuccessUrl("/")
+                            .defaultSuccessUrl("/",true)
                             .failureUrl("/sign-in?error=true");
                 })
                 .logout(
@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 .rememberMeCookieName("rememberMe")
                                 .tokenValiditySeconds(3 * 60 * 60 * 24)
                                 .rememberMeParameter("rememberMe")
-                ).build();
+                )
+                .build();
     }
 }

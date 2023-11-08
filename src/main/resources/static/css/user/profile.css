@@ -8,6 +8,8 @@
     text-decoration: none;
 }
 .profile-div{
+    float: left;
+    width: 30%;
     justify-content: center;
     align-items: center;
     height: 200px;
@@ -20,6 +22,49 @@
     font-weight: 400;
     transition: all .42s ease;
 }
-.update{
+.update div{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.update input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: compact;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+.update button{
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+}
+
+.delete-div{
+    float: left;
+    width: 50%;
+    padding: 80px;
+}
+button.delete{
+    position: relative;
+    float: left;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid;
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
 }

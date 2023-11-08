@@ -22,7 +22,7 @@ public class Role {
     private UUID id;
     @Column(unique = true)
     private String code;
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "role_permission",
             joinColumns =@JoinColumn(name = "role_id"),

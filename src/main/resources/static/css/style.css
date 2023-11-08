@@ -96,7 +96,7 @@ section{
     transform: scale(0.9);
 }
 
-.product-text h5{
+.product-text h5 {
     position: absolute;
     top: 13px;
     left: 13px;
@@ -203,4 +203,41 @@ section{
 .h5-profile{
     display: flex;
     margin-right: 3px;
+}
+
+.product-div{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,auto));
+    gap: 2rem;
+}
+.product-div h5 {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #27b737;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.row-div{
+    position: relative;
+    float: left;
+    width: 60%;
+    transition: all .40s;
+}
+.product2-div{
+    position: relative;
+    float: left;
+    width: 50%;
+}
+.product2-div p{
+    position: relative;
+    float: left;
+}
+.product2-image{
+    width: 400px;
+    height: 400px;
 }

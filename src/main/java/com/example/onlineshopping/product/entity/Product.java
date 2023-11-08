@@ -35,7 +35,7 @@ public class Product {
     @Column(nullable = false)
     private String photo;
 
-
+    @Column(length = 1000)
     private String description;
 
 //    @ManyToOne(targetEntity = User.class)

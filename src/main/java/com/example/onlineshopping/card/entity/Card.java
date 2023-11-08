@@ -21,8 +21,7 @@ public class Card {
     private Integer cardCvv;
     private String cardExpirationDate;
     private String phoneNumber;
-    @ManyToOne
-    @JoinTable(name = "user_card")
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
 }

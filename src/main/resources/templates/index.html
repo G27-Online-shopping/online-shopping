@@ -38,8 +38,10 @@
     <div class="nav-icon">
         <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
         <h6 class="h5-profile" sec:authorize="isAuthenticated()" th:text="${#authentication.principal.name}"></h6>
-        <h6 class="h5-profile" sec:authorize="isAuthenticated()"
-            th:text="${#authentication.principal.surname}"></h6>
+<!--        <h6 class="h5-profile" sec:authorize="isAuthenticated()"-->
+<!--          th:text="${#authentication.principal.surname}">-->
+<!--</h6>-->
+
         <a sec:authorize="isAuthenticated()" href="/profile"><i class='bx bx-user'></i></a>
         <a href="/card"><i class='bx bx-cart'></i></a>
     </div>
@@ -57,9 +59,9 @@
         <div class="row" th:each="product: ${products}">
 
 
-            <form th:action="@{/product}" th:method="post">
+            <form th:action="@{/product}" th:method="get">
                 <input hidden="hidden" name="name" th:value="${product.name}">
-                <button type="submit" style="border: none">
+                <button type="submit" style=" border: none">
                     <img th:src="${product.photo}" class="product-image" alt="">
                 </button>
             </form>
