@@ -38,6 +38,4 @@ public class UserController {
         userService.update(userUpdateDto);
         return "redirect:/sign-out";
     }
-
-
 }

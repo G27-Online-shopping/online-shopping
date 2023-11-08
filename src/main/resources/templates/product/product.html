@@ -6,9 +6,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/user/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap"
@@ -28,6 +27,14 @@
         <li><a href="/">Home</a></li>
         <li><a href="/">Products</a></li>
     </ul>
+    <div class="search">
+        <form method="get" action="product/search">
+            <label>
+                <input type="search" placeholder="Search...">
+                <a href="/search"><i class='bx bx-search'></i></a>
+            </label>
+        </form>
+    </div>
     <div class="nav-icon">
         <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
         <h6 class="h5-profile" sec:authorize="isAuthenticated()" th:text="${#authentication.principal.name}"></h6>
@@ -35,10 +42,6 @@
             th:text="${#authentication.principal.surname}"></h6>
         <a sec:authorize="isAuthenticated()" href="/profile"><i class='bx bx-user'></i></a>
         <a href="/card"><i class='bx bx-cart'></i></a>
-        <ul class="navmenu">
-            <li><a href="/sign-out"><h5>Log Out</h5> </a></li>
-        </ul>
-
     </div>
 
 </header>
@@ -46,44 +49,35 @@
     <div class="down-arrow">
     </div>
 </section>
-<section>
-    <div class="profile-div">
-        <h4><i class='bx bx-user'></i></h4>
-        <h4 th:text="'Name: ' + ${#authentication.principal.name}"></h4>
-        <h4 th:text="'Surname: ' + ${#authentication.principal.surname}"></h4>
-        <h4 th:text="'Email: ' + ${#authentication.principal.email}"></h4>
-        <h4 th:text="'PhoneNumber: ' + ${#authentication.principal.phoneNumber}"></h4>
-    </div>
-    <div class="delete-div">
-        <form th:method="POST" th:action="@{/delete}">
-             <input hidden="hidden" type="text" name="email" th:value="${#authentication.principal.email}">
-             <button class="delete" type="submit">Delete Account</button>
-        </form>
-    </div>
-    <div class="update">
-        <form th:method="POST" th:action="@{/update}">
-            <input type="hidden" name="oldEmail" th:value="${#authentication.principal.email}">
-            <label>
-                <input type="text" name="name" placeholder="Name">
-            </label>
-            <label>
-                <input type="text" name="surname" placeholder="Surname">
-            </label>
-            <label>
-                <input type="email" name="email" placeholder="Email">
-            </label>
-            <label>
-                <input type="text" name="phoneNumber" placeholder="Phone Number">
-            </label>
-            <label>
-                <input type="password" name="password" placeholder="Password">
-            </label>
-            <button type="submit">Update</button>
-        </form>
+<section class="trending-product" id="trending">
+    <div class="product-div">
+        <div class="row-div" >
+
+            <img th:src="${product.photo}" class="product2-image" alt="">
+
+            <div class="product-text">
+                <h5>Sale</h5>
+            </div>
+
+            <div class="price">
+                <button sec:authorize="isAuthenticated()" class="button-34">To Card</button>
+            </div>
+            <div class="price">
+                <h2 th:text="${product.price+'$'}"></h2>
+            </div>
+
+
+        </div>
+
+        <div class="product2-div">
+            <div class="price">
+                <h4 th:text="${product.description}"></h4>
+            </div>
+        </div>
+
     </div>
 
 </section>
-
 
 <section class="contact">
     <div class="contact-info">
@@ -92,6 +86,7 @@
                  height="90" width="220">
             <p>Toshkent shahar, Shayhontohur tum., Beruniy ko'chasi, 3A-uy </p>
             <p>+998007777777</p>
+            <p>+998 91 010 76 02</p>
             <p>yoldashevabror182@gmail.com</p>
 
             <div class="social-icons">

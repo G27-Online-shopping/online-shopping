@@ -3,6 +3,7 @@ package com.example.onlineshopping.product;
 
 import com.example.onlineshopping.product.dto.ProductCreateDto;
 import com.example.onlineshopping.product.dto.ProductResponseDto;
+import com.example.onlineshopping.product.entity.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,13 @@ public class ProductController {
         return "index";
     }
 
+    @GetMapping("/product")
+    public String get(@RequestParam("name") String name,Model model){
+        Product byName = productService.getByName(name);
+        model.addAttribute("product",byName);
+        return "product/product";
+    }
+
 //    @GetMapping("/")
 //    public String getProduct( Model model){
 //        List<ProductResponseDto> responseDtoList=productService.getAll();
@@ -40,10 +48,10 @@ public class ProductController {
         return productService.create(productCreateDto);
     }
 
-    @GetMapping("/{productId}")
+   /* @GetMapping("/{productId}")
     public ProductResponseDto get(@PathVariable("productId") UUID id){
         return productService.get(id);
-    }
+    }*/
 
     @GetMapping("/products")
     public List<ProductResponseDto> getAll(){
