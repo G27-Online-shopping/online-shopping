@@ -38,8 +38,10 @@
     <div class="nav-icon">
         <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
         <h6 class="h5-profile" sec:authorize="isAuthenticated()" th:text="${#authentication.principal.name}"></h6>
-        <h6 class="h5-profile" sec:authorize="isAuthenticated()"
-            th:text="${#authentication.principal.surname}"></h6>
+<!--        <h6 class="h5-profile" sec:authorize="isAuthenticated()"-->
+<!--          th:text="${#authentication.principal.surname}">-->
+<!--</h6>-->
+
         <a sec:authorize="isAuthenticated()" href="/profile"><i class='bx bx-user'></i></a>
         <a href="/card"><i class='bx bx-cart'></i></a>
     </div>

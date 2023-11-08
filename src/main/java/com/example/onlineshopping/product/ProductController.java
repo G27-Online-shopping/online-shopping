@@ -59,4 +59,8 @@ public class ProductController {
     public void delete(@PathVariable("productId") UUID id){
         productService.delete(id);
     }
+    @GetMapping("/product/search")
+    public void searchProducts( String name){
+         productService.findByName(name);
+    }
 }

@@ -72,4 +72,9 @@ public class ProductService {
 
         return modelMapper.map(save, ProductResponseDto.class);
     }
+
+    public void findByName(String name) {
+
+         productRepository.findByName(name);
+    }
 }

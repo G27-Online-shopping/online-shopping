@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth2LoginConfig -> {
                     oauth2LoginConfig
                             .loginPage("/oauth2/authorization")
-                            .defaultSuccessUrl("/")
+                            .defaultSuccessUrl("/",true)
                             .failureUrl("/sign-in?error=true");
                 })
                 .logout(
@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 .rememberMeCookieName("rememberMe")
                                 .tokenValiditySeconds(3 * 60 * 60 * 24)
                                 .rememberMeParameter("rememberMe")
-                ).build();
+                )
+                .build();
     }
 }
