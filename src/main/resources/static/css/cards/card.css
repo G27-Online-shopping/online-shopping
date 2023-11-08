@@ -48,6 +48,7 @@ form input,label,button{
     display: flex;
     gap: 15px;
 }
+
 .first_name, .last_name, .cvv, .expiration_date{
     display: flex;
     flex-direction: column;

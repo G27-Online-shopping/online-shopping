@@ -78,10 +78,11 @@
                 <i class='bx bxs-star'></i>
                 <i class='bx bxs-star-half'></i>
             </div>
+
             <div class="price">
                 <h4 th:text="${product.name}"></h4>
                 <p th:text="${product.price+'$'}"></p>
-                <button sec:authorize="isAuthenticated()" class="button-34">To Card</button>
+                <button type="submit" sec:authorize="isAuthenticated()" class="button-34"  href="card/card">To Card</button>
             </div>
         </div>
 

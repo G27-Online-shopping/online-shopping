@@ -24,4 +24,5 @@ public class Card {
     @ManyToOne
     @JoinTable(name = "user_card")
     private User user;
+
 }

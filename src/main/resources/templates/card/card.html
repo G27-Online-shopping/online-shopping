@@ -1,75 +1,183 @@
-<!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
     <link href="/css/cards/card.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-<h1>Karta ma'lumotlari</h1>
-<div class="main">
-    <div class="left" >
-        <div class="cards">
-            <p>Qo'llab quvvatlanadigan kartalar</p>
-            <div class="pay-card-list">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_visa.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_master.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_troy.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_amex.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_discover.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_jcb.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_diners.png" alt="img">
-                <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_unionpay.png" alt="img">
+<header>
+    <a href="/" class="icon"><img
+            src="https://img.freepik.com/premium-vector/shopping-logo-design-template-with-bag_502185-127.jpg?w=996"
+            alt="" height="90" width="220"></a>
+    <ul class="navmenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Products</a></li>
+    </ul>
+
+    <div class="nav-icon">
+        <a sec:authorize="isAnonymous()" href="/sign-in"><i class='bx bx-user'></i></a>
+        <h6 class="h5-profile" sec:authorize="isAuthenticated()" th:text="${#authentication.principal.name}"></h6>
+        <h6 class="h5-profile" sec:authorize="isAuthenticated()"
+            th:text="${#authentication.principal.surname}"></h6>
+        <a sec:authorize="isAuthenticated()" href="/profile"><i class='bx bx-user'></i></a>
+        <a href="/card"><i class='bx bx-cart'></i></a>
+    </div>
+
+</header>
+<section>
+    <div class="down-arrow">
+    </div>
+</section>
+<section>
+
+
+    <h1>Karta ma'lumotlari</h1>
+    <div class="main">
+        <div class="left" >
+            <div class="cards">
+                <p>Qo'llab quvvatlanadigan kartalar</p>
+                <div class="pay-card-list">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_visa.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_master.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_troy.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_amex.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_discover.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_jcb.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_diners.png" alt="img">
+                    <img src="//cdn.midasbuy.com/h5/overseah5/images/card_icon_v1_unionpay.png" alt="img">
+
+                </div>
+            </div>
+            <form class="card-list" th:method="POST" th:action="@{/card}">
+                <input hidden="hidden" name="_csrf" th:value="${_csrf}">
+                <label>
+                    Card Number
+                </label>
+                <input name="cardNumber" class="form-control" placeholder="Card Number">
+                <div class="card_date">
+                    <div class="expiration_date">
+                        <label>
+                            CardExpirationDate
+                        </label>
+                        <input name="cardExpirationDate" class="form-control" placeholder="CardExpirationDate">
+                    </div>
+                    <div class="cvv">
+                        <label>
+                            Card Cvv
+                        </label>
+                        <input name="cardCvv" class="form-control" placeholder="Card Cvv">
+                    </div>
+                </div>
+                <div class="names">
+                    <div class="first_name">
+                        <label>
+                            First Name
+                        </label>
+                        <input name="cardFirstName" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="last_name">
+                        <label>
+                            Last Name
+                        </label>
+                        <input name="cardLastName" class="form-control" placeholder="Last name">
+                    </div>
+                </div>
+
+                <label>
+                    Phone Number
+                </label>
+                <input name="phoneNumber" class="form-control" placeholder="Phone Number">
+                <label>
+                    To'lov
+                </label>
+                <button id="btn_submit" class="btn btn-primary" type="submit">To'lov</button>
+                <script type="text/javascript" src="/css/cards/card.js"></script>
+            </form>
+        </div>
+        <div class="right">
+            <div class="products">
+                <div class="row" th:each="product: ${productId}">
+
+                    <form th:action="@{/product}" th:method="post">
+                        <input hidden="hidden" name="name" th:value="${product.name}">
+                        <button type="submit" style="border: none">
+                            <img th:src="${product.photo}" class="product-image" alt="">
+                        </button>
+                    </form>
+
+
+                    <div class="product-text">
+                        <h5>Sale</h5>
+                    </div>
+                    <div class="heart-icon">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                    <div class="ratting">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+
+                    <div class="price">
+                        <h4 th:text="${product.name}"></h4>
+                        <p th:text="${product.price+'$'}"></p>
+                    </div>
+                </div>
 
             </div>
         </div>
-        <form class="card-list" th:method="POST" th:action="@{/card}">
-            <input hidden="hidden" name="_csrf" th:value="${_csrf}">
-            <label>
-                Card Number
-            </label>
-            <input name="cardNumber" placeholder="Card Number">
-            <div class="card_date">
-                <div class="expiration_date">
-                    <label>
-                        CardExpirationDate
-                    </label>
-                    <input name="cardExpirationDate" placeholder="CardExpirationDate">
-                </div>
-                <div class="cvv">
-                    <label>
-                        Card Cvv
-                    </label>
-                    <input name="cardCvv" placeholder="Card Cvv">
-                </div>
-            </div>
-            <div class="names">
-                <div class="first_name">
-                    <label>
-                        First Name
-                    </label>
-                    <input name="cardFirstName" placeholder="First name">
-                </div>
-                <div class="last_name">
-                    <label>
-                        Last Name
-                    </label>
-                    <input name="cardLastName" placeholder="Last name">
-                </div>
-            </div>
+    </div>
 
-            <label>
-                Phone Number
-            </label>
-            <input name="phoneNumber" placeholder="Phone Number">
-            <button id="btn_submit" type="submit">To'lov</button>
-            <script type="text/javascript" src="/css/cards/card.js"></script>
-        </form>
+
+
+</section>
+
+
+<section class="contact">
+    <div class="contact-info">
+        <div class="first-info">
+            <img src="https://img.freepik.com/premium-vector/shopping-logo-design-template-with-bag_502185-127.jpg?w=996"
+                 height="90" width="220">
+            <p>Toshkent shahar, Shayhontohur tum., Beruniy ko'chasi, 3A-uy </p>
+            <p>+998007777777</p>
+            <p>+998 91 010 76 02</p>
+            <p>yoldashevabror182@gmail.com</p>
+
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://instagram.com/abbror.yuldashev?igshid=MzRlODBiNWFlZA=="><i
+                        class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-telegram'></i></a>
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+
     </div>
-    <div class="right">
-        <h1>fkjwbvkenxbfrwkdxmvkjwehb</h1>
-    </div>
-</div>
+</section>
+
+<script src="java.js"></script>
+
 
 </body>
 </html>
